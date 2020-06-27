@@ -93,3 +93,14 @@ length = length of singly linked list
 -   function should accept an index
 -   if the index < zero or index >= length, return null
 -   loop through the list until you reach the index and return the node at that index
+
+### Set
+
+-   Changed the value of a node based on its position in the linked list
+
+#### Pseudo Code
+
+-   function should accept a value and an index
+-   use the get method to find the specific node
+-   if the node is not found, return false
+-   if the node is found, set the value of that node to be the value passed to the function and return true
