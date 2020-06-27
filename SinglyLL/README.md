@@ -104,3 +104,47 @@ length = length of singly linked list
 -   use the get method to find the specific node
 -   if the node is not found, return false
 -   if the node is found, set the value of that node to be the value passed to the function and return true
+
+### Insert
+
+-   Add a node to the linked list at a specific position
+
+#### Pseudo Code
+
+-   if index < 0 or index > length, return false
+-   if index === length, push a new node to the end
+-   if index === 0, unshift a new node to the start of the list
+-   otherwise, using the get method, access the node at the index - 1 (the node that will point to the inserted node)
+-   set the next property on that node to be the new node
+-   set the next property on the new node to the previous node's next
+-   increment the length
+-   return true
+
+### Remove
+
+-   removes a node from the list at a specific position
+
+#### Pseudo Code
+
+-   if index < 0 or index > length, return undefined
+-   if index === length, pop
+-   if index === 0, shift
+-   otherwise, using get method, access the node at the index - 1
+-   set the next property on that node to be the next of the next node
+-   decrement the length
+-   return value of the removed node
+
+### Reverse
+
+-   reverse the linked list in place
+
+#### Pseudo Code
+
+-   swap the head and the tail
+-   create a variable named next and prev
+-   create a variable named node and initialize it to the head property
+-   loop through the list
+-   set next to be the next property on whatever node it is on
+-   set the next property on the node to be whatever prev is
+-   set prev to be the value of the node variable
+-   set the node variable to be the value of the next variable
