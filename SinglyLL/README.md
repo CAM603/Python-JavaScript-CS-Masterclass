@@ -43,3 +43,17 @@ length = length of singly linked list
 -   otherwise set the next property on the tail to be the new node and set the tail property on the list to be the newly created node
 -   increment length by one
 -   return linked list
+
+### Pop
+
+-   Removes a node from the end of the list
+-   Needs to traverese the list until it finds the second to last node, and then assign that as the tail and its next val to none/null
+
+#### Psuedo Code
+
+-   if there are no nodes in the list, return undefined
+-   loop through the list until you reach the tail
+-   set the next property of the second to last node to be null
+-   set the tail to be the the second to last node
+-   decrement the length of the list by one
+-   return the value of the node removed
