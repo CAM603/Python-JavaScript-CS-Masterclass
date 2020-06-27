@@ -57,3 +57,39 @@ length = length of singly linked list
 -   set the tail to be the the second to last node
 -   decrement the length of the list by one
 -   return the value of the node removed
+
+### Shift
+
+-   Removes node from the beginning of the list
+
+#### Pseudo Code
+
+-   if there are no nodes, return undefined
+-   store the current head property in a variable
+-   set the head property to be the current head's next property
+-   decrement length
+-   return the value of the node removed
+
+### Unshift
+
+-   Adds a new node to the beginning of the list
+
+#### Pseudo Code
+
+-   function should accept a value
+-   create a new node using the value passed into the function
+-   if there is no head property, set the head and tail to the newly created node
+-   otherwise set the newly created node's next property to be the current head property on the list
+-   set the head property on the list to be the newly created node
+-   increment the length
+-   return the linked list
+
+### Get
+
+-   Retrieves a node by its position in the linked list
+
+#### Pseudo Code
+
+-   function should accept an index
+-   if the index < zero or index >= length, return null
+-   loop through the list until you reach the index and return the node at that index
