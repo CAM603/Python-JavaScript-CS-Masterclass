@@ -148,3 +148,10 @@ length = length of singly linked list
 -   set the next property on the node to be whatever prev is
 -   set prev to be the value of the node variable
 -   set the node variable to be the value of the next variable
+
+## Big O
+
+-   insert: O(1)
+-   remove: O(1) (from biginning) or O(N)
+-   search: O(N)
+-   access: O(N)
