@@ -52,3 +52,52 @@ Insertion: O(1)
 Removal: O(1)
 Search: O(N)
 Access: O(N)
+
+# Queue
+
+An abstract data structure. A collection of data abides by a FIFO priciple
+FIFO = First In First Out
+
+## Where are they used?
+
+-   Uploading resources
+-   Background tasks
+-   Printing/Task processing
+
+### Using an array
+
+-   The array is the stack and you can push and shift which abides by FIFO
+-   Instead of push and shift, you can use unshift and pop
+-   There is no way around having to reindex elements :(
+
+### Using a linked list
+
+-   Create a Node class with _val_ and _next_ properties
+-   Create a Queue class with _first_, _last_ and _size_ properties
+-   Implement a enqueue method that adds to the end
+-   Implement a dequeue method that removes from the front
+
+#### Enqueue Pseudo Code
+
+-   function accepts a value
+-   create a new node from the value
+-   if there are no nodes in the queue, set this node to be the first and last property of the queue
+-   otherwise, set the next property on the current last to be that node and then set the last property of the queue to be that node
+-   increment the size
+-   return the size
+
+#### Dequeue Pseudo Code
+
+-   if there is no first property, return null
+-   store the first property in a variable
+-   if there is only one node in the queue, set the first and last to null
+-   otherwise, set the first property to be the next property of first
+-   decrement the size by 1
+-   return the value of the node dequeued
+
+## Big O
+
+Insertion: O(1)
+Removal: O(1)
+Search: O(N)
+Access: O(N)
