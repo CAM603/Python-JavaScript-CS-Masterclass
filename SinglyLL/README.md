@@ -2,6 +2,7 @@
 
 -   A data structure that contains a head, tail, and lenght property.
 -   Linked lists consist of nodes, and each node has a value and a pointer to another node or null
+    ![singly linked list](./images/sll.png)
 
 ## Lists vs Arrays
 
