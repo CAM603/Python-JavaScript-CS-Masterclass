@@ -31,5 +31,5 @@ Example: Write a function called sumZero which accepts a sorted array of integer
 ```js
 sumZero([-3, -2, -1, 0, 1, 2, 3]); // [-3, 3]
 sumZero([-2, 0, 1, 3]); // undefined
-sumZero([1, 2, 3]);
+sumZero([1, 2, 3]); // undefined
 ```
