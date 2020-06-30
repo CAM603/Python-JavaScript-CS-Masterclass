@@ -41,7 +41,9 @@ function same(arr1, arr2) {
 same([1, 2, 3, 2], [9, 1, 4, 4]);
 
 // CHALLENGE: anagrams
-// Given two strings, write a function to determine if the second string is an anagram of the first. An anagram is a word, phrase, or name formed by rearranging the letters of another, such as cinema, formed from iceman
+/*
+Given two strings, write a function to determine if the second string is an anagram of the first. An anagram is a word, phrase, or name formed by rearranging the letters of another, such as cinema, formed from iceman
+*/
 
 function anagram(str1, str2) {
     if (str1.length !== str2.length) {
@@ -85,3 +87,63 @@ function anagram(str1, str2) {
 }
 
 anagram("anagram", "nagaram");
+
+// CHALLENGE: sameFrequency
+/*
+Write a function called sameFrequency. Given two positive integers, find out if the two numbers have the same frequency of digits. The solution must have O(N) time complexity
+*/
+
+function sameFrequency(n1, n2) {
+    let cache = {};
+    let num1 = n1.toString();
+    let num2 = n2.toString();
+
+    if (num1.length !== num2.length) {
+        return false;
+    }
+    for (let num of num1) {
+        cache[num] ? (cache[num] += 1) : (cache[num] = 1);
+    }
+    for (let num of num2) {
+        cache[num] ? (cache[num] += 1) : (cache[num] = 1);
+    }
+    for (let num in cache) {
+        if (cache[num] % 2 !== 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+sameFrequency(123, 123);
+sameFrequency(123, 456);
+sameFrequency(123, 4567);
+// CHALLENGE: areThereDuplicates
+/*
+Implement a function called, areThereDuplicates which accepts a variable number of arguments, and checks whether there are any duplicates among the arguments passed in. This can be solved using the frequency counter pattern OR the multiple pointers pattern
+*/
+function areThereDuplicates(...args) {
+    let sortedArr = args.sort();
+    let first = 0;
+    let second = 1;
+    while (second < sortedArr.length) {
+        if (sortedArr[first] === sortedArr[second]) {
+            return true;
+        }
+        first++;
+        second++;
+    }
+    return false;
+}
+
+function areThereDuplicates(...args) {
+    let cache = {};
+
+    for (item of args) {
+        if (cache[item]) {
+            return true;
+        }
+        cache[item] = 1;
+    }
+    return false;
+}
