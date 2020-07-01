@@ -31,3 +31,9 @@ Psuedo Code
     -- If the value is too small, move the left pointer up
     -- If the value is too large, move the right pointer down
 -   If you never find the value, return -1
+
+### Big O
+
+-   Best: O(1)
+-   Worst: O(log N)
+-   Average: O(log N)
