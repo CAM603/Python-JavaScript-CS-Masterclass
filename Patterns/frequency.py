@@ -121,4 +121,32 @@ def areThereDuplicates(*args):
     return len(set(args)) != len(args)
 
 
+def areThereDuplicates2(*args):  # 2 pointers without sort
+
+    for i in range(len(args)):
+        next = i + 1
+        while next < len(args):
+            if args[i] == args[next]:
+                return True
+            next += 1
+    return False
+
+
+def areThereDuplicates3(*args):  # 2 pointers with sort
+    args = sorted(args)
+    first = 0
+    second = 1
+    while second < len(args):
+        if args[first] == args[second]:
+            return True
+        first += 1
+        second += 1
+
+    return False
+
+
 print(areThereDuplicates(1, 2, 2, 3, 4))
+print(areThereDuplicates2(4, 1, 4, 2, 3, 2))
+print(areThereDuplicates2(4, 1, 2, 3))
+print(areThereDuplicates3(4, 1, 4, 2, 3, 2))
+print(areThereDuplicates3(4, 1, 2, 3))
