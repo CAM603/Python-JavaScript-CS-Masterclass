@@ -1,13 +1,18 @@
 # Singly Linked List
 
--   A data structure that contains a head, tail, and lenght property.
--   Linked lists consist of nodes, and each node has a value and a pointer to another node or null
+-   A data structure that contains a head, tail, and length property.
+-   Linked lists consist of nodes, and each node has a value and a single pointer to it's next node, or null if it is the tail.
+-   Can only be traversed in one direction, they are _unidirectional_
+-   Removing a node from the end of a singly linked list is a linear operation instead of a constant-time operation like in lists/arrays
+-   Getting to any position in a singly linked list requires traversing from the head, even if the position we want to get is physically closer to the tail
     ![singly linked list](./images/sll.png)
 
 ## Lists vs Arrays
 
 Lists
 
+-   Unlike arrays, linked lists do not store elements contiguously in memory
+-   Linked lists do not need to be allocated with a static amount of memory up front
 -   Do not have indices
 -   Connected via nodes with a next pointer
 -   Random access is not allowed
@@ -26,8 +31,8 @@ next = reference to next node
 
 ## Linked List Properties and Methods
 
-head =
-tail =
+head = The first node
+tail = The last node, it points to null or None
 length = length of singly linked list
 
 ### Push
@@ -153,6 +158,6 @@ length = length of singly linked list
 ## Big O
 
 -   insert: O(1)
--   remove: O(1) (from biginning) or O(N)
+-   remove: It depends...O(1) (from biginning) or O(N)
 -   search: O(N)
 -   access: O(N)

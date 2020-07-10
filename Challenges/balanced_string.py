@@ -57,11 +57,15 @@ def balancedStr2(string):
             if char == '|' and pipe_count % 2 == 0:
                 pipe_count += 1
             elif char == '|' and pipe_count % 2 != 0:
-                match = stack.pop()
-                if match != "|":
+                if len(stack) == 0:
                     balanced = False
-                pipe_count += 1
-                continue
+                    continue
+                else:
+                    match = stack.pop()
+                    if match != "|":
+                        balanced = False
+                    pipe_count += 1
+                    continue
             stack.append(char)
         elif char in closing:
             if len(stack) == 0:
