@@ -26,8 +26,8 @@ Arrays
 
 ## Node Properties
 
-val = peice of data
-next = reference to next node
+-   val = piece of data
+-   next = reference to next node
 
 ## Linked List Properties and Methods
 
@@ -58,10 +58,17 @@ length = length of singly linked list
 #### Psuedo Code
 
 -   if there are no nodes in the list, return undefined
+-   declare a variable, _current_, set as the head
+-   declare a variable, _newTail_, set to _current_
 -   loop through the list until you reach the tail
--   set the next property of the second to last node to be null
--   set the tail to be the the second to last node
+    -   while _current.next_ is not null or None:
+        -   _newTail_ = current
+        -   current = current.next
+    -   Once current.next is null or None, _newTail_ will be the second to last node
+-   set the next property of _newTail_ to be null or None
+-   set the tail to be _newTail_
 -   decrement the length of the list by one
+-   if the length now = 0, set head and tail to null or None
 -   return the value of the node removed
 
 ### Shift
@@ -74,6 +81,7 @@ length = length of singly linked list
 -   store the current head property in a variable
 -   set the head property to be the current head's next property
 -   decrement length
+-   if the length is now 0, set tail to null or None
 -   return the value of the node removed
 
 ### Unshift
