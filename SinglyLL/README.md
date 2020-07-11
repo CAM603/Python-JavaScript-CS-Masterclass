@@ -68,7 +68,7 @@ length = length of singly linked list
 -   set the next property of _newTail_ to be null or None
 -   set the tail to be _newTail_
 -   decrement the length of the list by one
--   if the length now = 0, set head and tail to null or None
+-   if the length is now 0, set head and tail to null or None
 -   return the value of the node removed
 
 ### Shift
@@ -101,6 +101,7 @@ length = length of singly linked list
 ### Get
 
 -   Retrieves a node by its position in the linked list
+-   For this list, positions are zero indexed
 
 #### Pseudo Code
 
@@ -140,8 +141,8 @@ length = length of singly linked list
 
 #### Pseudo Code
 
--   if index < 0 or index > length, return undefined
--   if index === length, pop
+-   if index < 0 or index >= length, return undefined
+-   if index === length - 1, pop
 -   if index === 0, shift
 -   otherwise, using get method, access the node at the index - 1
 -   set the next property on that node to be the next of the next node
@@ -154,14 +155,17 @@ length = length of singly linked list
 
 #### Pseudo Code
 
--   swap the head and the tail
--   create a variable named next and prev
--   create a variable named node and initialize it to the head property
--   loop through the list
--   set next to be the next property on whatever node it is on
+-   set current variable to the head
+-   set head to the tail
+-   set tail to the head
+-   create a variable named prev set to None or null
+-   create a variable named next
+-   loop through the list while current
+-   set next to be the next property on the current node
 -   set the next property on the node to be whatever prev is
--   set prev to be the value of the node variable
--   set the node variable to be the value of the next variable
+-   set prev to be the current node
+-   set current to next
+-   return the list
 
 ## Big O
 
