@@ -38,6 +38,30 @@ class BinarySearchTree {
             }
         }
     }
+
+    recursiveInsert(value, node = this.root) {
+        if (!this.root) {
+            this.root = new Node(value);
+            return this;
+        }
+        if (value === node.value) return undefined;
+
+        if (value < node.value) {
+            if (!node.left) {
+                node.left = new Node(value);
+                return this;
+            }
+            return this.recursiveInsert(value, node.left);
+        }
+
+        if (value > node.value) {
+            if (!node.right) {
+                node.right = new Node(value);
+                return this;
+            }
+            return this.recursiveInsert(value, node.right);
+        }
+    }
 }
 
 let tree = new BinarySearchTree();
