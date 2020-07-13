@@ -25,7 +25,7 @@ To ba a tree, nodes can't point to other nodes that are on the same level. Nodes
 
 ### Trees
 
--   Each node can have as many nodes as it wants
+-   Each node can have as many nodes attached as it wants
 
 ### Binary Trees
 
@@ -79,3 +79,47 @@ Starting at the root
     -   Check to see if there is a node to the left.
         -   If there is, move to that node and repeat these steps.
         -   If there is not, we are done searching!
+
+## Big O
+
+_When sorted_
+
+Best case, on average...
+Insertion: O(log n)
+Searching: O(log n)
+
+Worst case, every node from the root only has nodes to the left or right of it's parent and it looks like a linked list...
+Insertion: O(n)
+Searching: O(n)
+
+## Tree Traversal
+
+How do we visit every node once? Two ways:
+
+-   Breadth First Search
+-   Depth First Search
+
+### Breadth First Search
+
+Iterative Steps
+
+-   Create a queue (can be an array) and a variable to store the values of nodes that have been visited
+-   Place the root node in the queue
+-   Loop as long as there are nodes in the queue
+    -   Dequeue a node from the queue and push the value of the node into the variable that stores the visited nodes
+    -   If there is a left property on the node dequeued, add it to the queue
+    -   If there is a right property on the node dequeued, add it to the queue
+-   Return the variable that stores the visited node values
+
+### Depth First Search
+
+Pre Order (starts from the root) Recursive Steps
+
+-   Create a variable to store the values of nodes visited
+-   Store the root of the BST in a variable called current
+-   Write a helper function which accepts a node
+    -   Push the value of the node to the variable that stores the visited values
+    -   If the node has a left property, call the helper function with the left property on the node
+    -   If the node has a right property, call the helper function with the right property on the node
+-   Invoke the helper function with the current variable
+-   Return the array of visited values
