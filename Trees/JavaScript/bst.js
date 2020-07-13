@@ -62,6 +62,41 @@ class BinarySearchTree {
             return this.recursiveInsert(value, node.right);
         }
     }
+
+    find(value) {
+        if (!this.root) return false;
+
+        let current = this.root;
+
+        while (current) {
+            if (current.value === value) return current;
+
+            if (value < current.value) {
+                if (!current.left) return false;
+                current = current.left;
+            } else {
+                if (!current.right) return false;
+                current = current.right;
+            }
+        }
+    }
+
+    contains(value) {
+        if (!this.root) return false;
+
+        let current = this.root;
+
+        while (current) {
+            if (current.value === value) return true;
+
+            if (value < current.value) {
+                current = current.left;
+            } else {
+                current = current.right;
+            }
+        }
+        return false;
+    }
 }
 
 let tree = new BinarySearchTree();
