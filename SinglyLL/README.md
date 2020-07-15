@@ -1,13 +1,18 @@
 # Singly Linked List
 
--   A data structure that contains a head, tail, and lenght property.
--   Linked lists consist of nodes, and each node has a value and a pointer to another node or null
+-   A data structure that contains a head, tail, and length property.
+-   Linked lists consist of nodes, and each node has a value and a single pointer to it's next node, or null if it is the tail.
+-   Can only be traversed in one direction, they are _unidirectional_
+-   Removing a node from the end of a singly linked list is a linear operation instead of a constant-time operation like in lists/arrays
+-   Getting to any position in a singly linked list requires traversing from the head, even if the position we want to get is physically closer to the tail
     ![singly linked list](./images/sll.png)
 
 ## Lists vs Arrays
 
 Lists
 
+-   Unlike arrays, linked lists do not store elements contiguously in memory
+-   Linked lists do not need to be allocated with a static amount of memory up front
 -   Do not have indices
 -   Connected via nodes with a next pointer
 -   Random access is not allowed
@@ -21,13 +26,13 @@ Arrays
 
 ## Node Properties
 
-val = peice of data
-next = reference to next node
+-   val = piece of data
+-   next = reference to next node
 
 ## Linked List Properties and Methods
 
-head =
-tail =
+head = The first node
+tail = The last node, it points to null or None
 length = length of singly linked list
 
 ### Push
@@ -53,10 +58,17 @@ length = length of singly linked list
 #### Psuedo Code
 
 -   if there are no nodes in the list, return undefined
+-   declare a variable, _current_, set as the head
+-   declare a variable, _newTail_, set to _current_
 -   loop through the list until you reach the tail
--   set the next property of the second to last node to be null
--   set the tail to be the the second to last node
+    -   while _current.next_ is not null or None:
+        -   _newTail_ = current
+        -   current = current.next
+    -   Once current.next is null or None, _newTail_ will be the second to last node
+-   set the next property of _newTail_ to be null or None
+-   set the tail to be _newTail_
 -   decrement the length of the list by one
+-   if the length is now 0, set head and tail to null or None
 -   return the value of the node removed
 
 ### Shift
@@ -69,6 +81,7 @@ length = length of singly linked list
 -   store the current head property in a variable
 -   set the head property to be the current head's next property
 -   decrement length
+-   if the length is now 0, set tail to null or None
 -   return the value of the node removed
 
 ### Unshift
@@ -88,6 +101,7 @@ length = length of singly linked list
 ### Get
 
 -   Retrieves a node by its position in the linked list
+-   For this list, positions are zero indexed
 
 #### Pseudo Code
 
@@ -127,8 +141,8 @@ length = length of singly linked list
 
 #### Pseudo Code
 
--   if index < 0 or index > length, return undefined
--   if index === length, pop
+-   if index < 0 or index >= length, return undefined
+-   if index === length - 1, pop
 -   if index === 0, shift
 -   otherwise, using get method, access the node at the index - 1
 -   set the next property on that node to be the next of the next node
@@ -141,18 +155,21 @@ length = length of singly linked list
 
 #### Pseudo Code
 
--   swap the head and the tail
--   create a variable named next and prev
--   create a variable named node and initialize it to the head property
--   loop through the list
--   set next to be the next property on whatever node it is on
+-   set current variable to the head
+-   set head to the tail
+-   set tail to the head
+-   create a variable named prev set to None or null
+-   create a variable named next
+-   loop through the list while current
+-   set next to be the next property on the current node
 -   set the next property on the node to be whatever prev is
--   set prev to be the value of the node variable
--   set the node variable to be the value of the next variable
+-   set prev to be the current node
+-   set current to next
+-   return the list
 
 ## Big O
 
 -   insert: O(1)
--   remove: O(1) (from biginning) or O(N)
+-   remove: It depends...O(1) (from biginning) or O(N)
 -   search: O(N)
 -   access: O(N)

@@ -1,4 +1,4 @@
-// Write a function called sumZero which accepts a sorted array of integers. The function should find the first pair where the sum is zero. Return an array that includes bothvalues that sum to zero or undefined if a pair does not exist
+// Write a function called sumZero which accepts a sorted array of integers. The function should find the first pair where the sum is zero. Return an array that includes both values that sum to zero or undefined if a pair does not exist
 
 // NAIVE EXAMPLE
 // Time Complexity: O(n^2)
@@ -43,7 +43,6 @@ function sumZero(arr) {
 
 sumZero([-3, -2, -1, 0, 1, 2, 3]); // [-3, 3]
 
-// CHALLENGE: countUniqueValues
 /*
 Implement a function called countUniqueValues, which accepts a sorted array and counts the unique values in the array. There can be negative numbers in the array but it will always be sorted
 */
@@ -52,8 +51,8 @@ Implement a function called countUniqueValues, which accepts a sorted array and 
 /*
 Start a pointer at the beginning and another pointer at the beginning + 1
 Compare the two
-If they are not equal, add to count count
-Increase second pointer
+If they are not equal, add to count
+Increase pointers
 */
 function countUniqueValues(arr) {
     let first = 0;
@@ -94,7 +93,6 @@ function countUniqueValues(arr) {
     return i + 1;
 }
 
-// CHALLENGE: averagePair
 /*
 Write a function called averagePair. Given a sorted array of integers and a target average, determine if there is a pair of values in the array where the average of the pair equals the target average. There may be more than one pair that matches the average target.
 Bonus Constraints:
@@ -123,9 +121,8 @@ function averagePair(arr, target) {
 averagePair([1, 2, 3], 2.5); // true
 averagePair([1, 3, 3, 5, 6, 7, 10, 12, 19], 8); // true
 averagePair([-1, 0, 2, 4, 5, 6], 4.1); // false
-averagePair([]); // false
+averagePair([], 3); // false
 
-// CHALLENGE: isSubsequence
 /*
 Write a function called isSubsequence which takes in two strings and checks whether the characters in the first string form a subsequence of the characters in the second string. In other words, the function should check whether the characters in the first string appear somewhere in the second string, without changing the ordering.
 Solution should have:
