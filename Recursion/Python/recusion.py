@@ -1,3 +1,28 @@
+# Recursion Recursion Recursion Recursion Recursion Recursion Recursion Recursion
+
+
+# Counts down from num to 1
+# count_down(5) -> 5 4 3 2 1 'This is the base case!'
+def count_down(num):
+    if num <= 0:
+        print("This is the base case!")
+        # Don't forget to return
+        return
+
+    print(num)
+    num -= 1
+    count_down(num)
+
+
+# Sums all numbers together from num to 1
+# sum_range(5) -> 15
+# 5 + 4 + 3 + 2 + 1 = 15
+def sum_range(num):
+    if num == 1:
+        return 1
+    return num + sum_range(num - 1)
+
+
 """
 Write a function called power which accepts a base and an exponent. The function should return the power of the base to the exponent. This function should mimic the functionality of Math.pow - do not worry about negative bases and exponents
 
