@@ -28,12 +28,18 @@ Two essential parts of a recursive funciton:
 
 So essentially, invoke the same function with a different input until you reach your base case!
 
+## Common Pitfalls
+
+-   No base case: Infinite Loop!
+-   Forgetting to return or returning the wrong thing: Returning will pop off the call stack
+-   Stack overflow: too many frames on the stack
+
 ## Example
 
 ```js
 function countDown(num) {
     if (num <= 0) {
-        console.log("Base case!");
+        console.log("This is the base case!");
         // Don't forget to return
         return;
     }
@@ -46,7 +52,7 @@ function countDown(num) {
 ```py
 def count_down(num):
     if num <= 0:
-        print("Base case!")
+        print("This is the base case!")
         # Don't forget to return
         return
 
@@ -68,3 +74,75 @@ count_down(1)
 
 count_down(0)
 -> "Base case!"
+
+## A more complex example
+
+```js
+function sumRange(num) {
+    if (num === 1) return 1;
+    return num + sumRange(num - 1);
+}
+```
+
+```py
+def sum_range(num):
+    if num == 1:
+        return 1
+    return num + sum_range(num - 1)
+```
+
+```
+sumRange(3)
+    return 3 + sumRange(2)
+                return 2 + sumRange(1)
+                            return 1
+                return 2 + 1
+    return 3 + 3
+return 6
+```
+
+## Helper method recursion
+
+Uses a helper function to call recursively.
+
+```js
+function collectOddValues(arr) {
+    let result = [];
+
+    function helper(helperInput) {
+        // Base case
+        if (helperInput.length === 0) return;
+
+        if (helperInput[0] % 2 !== 0) {
+            result.push(helperInput[0]);
+        }
+        helper(helperInput.slice(1));
+    }
+
+    helper(arr);
+
+    return arr;
+}
+```
+
+## Pure recursion
+
+Tips
+
+-   For arrays, use methods like splice, the spread operator, and concat that makes copies of arrays so you do not mutate them
+-   Strings are immutable so you will need to use methods like slice, substr, or substring to make copies of strings
+-   To makes copies of objects use Object.assign, or the spread operator
+
+```js
+function collectOddValues(arr) {
+    let newArr = [];
+
+    if (arr.length === 0) return newArr;
+
+    if (arr[0] % 2 !== 0) {
+        newArr.push(arr[0]);
+    }
+    newArr = newArr.concat(collectOddValues(arr.slice(1)));
+    return newArr;
+}
+```
