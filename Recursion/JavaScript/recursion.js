@@ -3,7 +3,6 @@ Write a function called power which accepts a base and an exponent. The function
 power(2,0) -> 1
 power(2,2) -> 4
 power(2,4) -> 16
-2 * 2 * 2 * 2
  */
 function power(base, exponent) {
     if (exponent === 0) return 1;
@@ -49,4 +48,38 @@ Write a function called recursiveRange which accepts a number and adds up all th
 recursiveRange(6) -> 21
 recursiveRange(10) -> 55
 */
-function recursiveRange(num) {}
+function recursiveRange(num) {
+    let total = 0;
+
+    function helper(num) {
+        if (num === 0) return total;
+        total += num;
+        helper(num - 1);
+    }
+    helper(num);
+    return total;
+}
+
+function recursiveRangePure(num) {
+    if (num === 0) return 0;
+
+    return num + recursiveRangePure(num - 1);
+}
+recursiveRangePure(6);
+
+/*
+Write a function called fib which accepts a number and returns the nth number in the Fibonacci sequence. Recall that the Fibonacci sequence is the sequence of whole numbers 1,1,2,3,5,8... which starts with 1 and 1, and where every number thereafter is equal to the sum of the previous two numbers
+fib(4) -> 3
+fib(10) -> 55
+fib(28) -> 317811
+fib(35) -> 9227465
+ */
+
+function fib(n) {
+    if (n <= 2) return 1;
+    return fib(n - 1) + fib(n - 2);
+}
+fib(4);
+fib(10);
+fib(28);
+fib(35);
