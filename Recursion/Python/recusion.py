@@ -1,8 +1,17 @@
 # Recursion Recursion Recursion Recursion Recursion Recursion Recursion Recursion
+"""
+There are two essential parts of a recursive funciton:
 
+-   The base case, which is the condition when the recursion ends. This is the most important concept to understand.
+-   Each time the recursive function calls itself, it is given different input
+
+So essentially, invoke the same function with a different input until you reach your base case!
+"""
 
 # Counts down from num to 1
 # count_down(5) -> 5 4 3 2 1 'This is the base case!'
+
+
 def count_down(num):
     if num <= 0:
         print("This is the base case!")
@@ -21,6 +30,26 @@ def sum_range(num):
     if num == 1:
         return 1
     return num + sum_range(num - 1)
+
+
+# You can even use a helper function
+# Returns all odd numbers
+def collect_odd_values(arr):
+    result = []
+
+    def helper(helperInput):
+        # Base case
+        if len(helperInput) == 0:
+            return
+
+        if helperInput[0] % 2 != 0:
+            result.append(helperInput[0])
+
+        helper(helperInput[1:])
+
+    helper(arr)
+
+    return result
 
 
 """

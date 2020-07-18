@@ -125,6 +125,25 @@ function collectOddValues(arr) {
 }
 ```
 
+```py
+def collect_odd_values(arr):
+    result = []
+
+    def helper(helperInput):
+        # Base case
+        if len(helperInput) == 0:
+            return
+
+        if helperInput[0] % 2 !== 0:
+            result.append(helperInput[0])
+
+        helper(helperInput[1:])
+
+    helper(arr)
+
+    return arr
+```
+
 ## Pure recursion
 
 Tips
