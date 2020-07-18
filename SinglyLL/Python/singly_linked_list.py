@@ -161,12 +161,27 @@ class SinglyLinkedList:
         prev = None
 
         while current:
-            next = current.next
+            nxt = current.next
             current.next = prev
             prev = current
-            current = next
+            current = nxt
 
         return self
+
+    def reverse_recursive(self):
+
+        def helper(curr, prev):
+            if not curr:
+                return prev
+
+            nxt = curr.next
+            curr.next = prev
+            prev = curr
+            curr = nxt
+            return helper(curr, prev)
+
+        self.tail = self.head
+        self.head = helper(self.head, None)
 
 
 sll = SinglyLinkedList()
@@ -179,11 +194,15 @@ sll.push(5)
 sll.push(6)
 sll.log()
 print(sll)
-sll.reverse()
-sll.log()
-print(sll)
+# sll.reverse_recursive()
+# sll.log()
+# print(sll)
 
-# curr = sll.head
-# while curr:
-#     print(curr)
-#     curr = curr.next
+arr1 = [1, 2, 3, 4, 5]
+arr2 = [2, 4, 5, 6, 7]
+
+for num1 in arr1:
+    print(num1)
+
+for num2 in arr2:
+    print(num2)
