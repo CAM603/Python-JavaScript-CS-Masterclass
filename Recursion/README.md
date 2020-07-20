@@ -121,7 +121,7 @@ function collectOddValues(arr) {
 
     helper(arr);
 
-    return arr;
+    return result;
 }
 ```
 
@@ -141,7 +141,7 @@ def collect_odd_values(arr):
 
     helper(arr)
 
-    return arr
+    return result
 ```
 
 ## Pure recursion
