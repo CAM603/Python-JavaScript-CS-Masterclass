@@ -12,4 +12,17 @@ def bubble_sort(arr):
     return arr
 
 
-print(bubble_sort([8, 6, 7, 4, 5, 3, 1, 2]))
+def bubble_sort2(arr):
+    swapped = True
+
+    while swapped:
+        swapped = False
+        for i in range(len(arr) - 1):
+            if arr[i] > arr[i + 1]:
+                arr[i], arr[i + 1] = arr[i + 1], arr[i]
+                swapped = True
+
+    return arr
+
+
+print(bubble_sort2([8, 6, 7, 4, 5, 3, 1, 2]))
