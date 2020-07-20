@@ -58,3 +58,51 @@ function someRecursive(arr, cb) {
     return someRecursive(arr.slice(1), cb);
 }
 someRecursive([4, 6, 8], isOdd);
+
+// Write a function called flatten which accepts an array of arrays and returns a new array with all values flattened
+// flatten([1, 2, 3, [4, 5] ]) // [1, 2, 3, 4, 5]
+// flatten([1, [2, [3, 4], [[5]]]]) // [1, 2, 3, 4, 5]
+// flatten([[1],[2],[3]]) // [1,2,3]
+// flatten([[[[1], [[[2]]], [[[[[[[3]]]]]]]]]]) // [1,2,3]
+
+function flatten(arr) {
+    let flattened = [];
+
+    function helper(arr) {
+        if (arr.length === 0) return;
+
+        if (Array.isArray(arr[0])) {
+            helper(arr[0]);
+        } else {
+            flattened.push(arr[0]);
+        }
+        helper(arr.slice(1));
+    }
+    helper(arr);
+    return flattened;
+}
+
+function flattenPure(arr) {
+    let flattened = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        if (Array.isArray(arr[i])) {
+            flattened = flattened.concat(flattenPure(arr[i]));
+        } else {
+            flattened.push(arr[i]);
+        }
+    }
+    return flattened;
+}
+
+function flattenPure2(arr) {
+    if (arr.length === 0) return arr;
+
+    if (!Array.isArray(arr[0])) {
+        return [arr[0]].concat(flattenPure2(arr.slice(1)));
+    } else {
+        return flattenPure2(arr[0]).concat(flattenPure2(arr.slice(1)));
+    }
+}
+
+flattenPure([1, 2, 3, [4, 5]]);
