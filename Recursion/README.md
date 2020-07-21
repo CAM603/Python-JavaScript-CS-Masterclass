@@ -165,3 +165,17 @@ function collectOddValues(arr) {
     return newArr;
 }
 ```
+
+```py
+def collect_odd_values(arr):
+    result = []
+
+    if len(arr) == 0:
+        return result
+
+    if arr[0] % 2 != 0:
+        result.append(arr[0])
+
+    result = result + collect_odd_values(arr[1:])
+    return result
+```

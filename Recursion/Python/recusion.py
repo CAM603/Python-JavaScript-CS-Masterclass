@@ -52,18 +52,38 @@ def collect_odd_values(arr):
     return result
 
 
+def collect_odd_values_pure(arr):
+    result = []
+
+    if len(arr) == 0:
+        return result
+
+    if arr[0] % 2 != 0:
+        result.append(arr[0])
+
+    result = result + collect_odd_values(arr[1:])
+    return result
+
+
+# print(collect_odd_values([1, 2, 3, 4, 5]))
+# print(collect_odd_values_pure([1, 2, 3, 4, 5]))
+
 """
 Write a function called power which accepts a base and an exponent. The function should return the power of the base to the exponent. This function should mimic the functionality of Math.pow - do not worry about negative bases and exponents
 
 power(2,0) -> 1
 power(2,2) -> 4
 power(2,4) -> 16
+2 * 2 * 2 * 2
 """
 # Code here
 
 
 def power(base, exponent):
-    pass
+    if exponent == 0:
+        return 1
+
+    return base * power(base, exponent - 1)
 
 
 """
@@ -83,7 +103,10 @@ factorial(7) -> 5040
 
 
 def factorial(num):
-    pass
+    if num == 0:
+        return 1
+
+    return num * factorial(num - 1)
 
 
 """
@@ -96,8 +119,32 @@ productOfArray([1,2,3,10]) -> 60
 
 
 def product_of_array(arr):
-    pass
+    result = 1
 
+    def helper(arr):
+        nonlocal result
+
+        if len(arr) == 0:
+            return
+
+        result *= arr[0]
+        helper(arr[1:])
+
+    helper(arr)
+
+    return result
+
+
+def product_of_array_pure(arr):
+
+    if len(arr) == 0:
+        return 1
+
+    return arr[0] * product_of_array_pure(arr[1:])
+
+
+print(product_of_array([1, 2, 3]))
+print(product_of_array_pure([1, 2, 3]))
 
 """
 Write a function called recursive_range which accepts a number and adds up all the numbers from 0 to the number passed into the function
