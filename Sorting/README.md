@@ -85,3 +85,9 @@ Pivot _Pseudocode_
     -   If the pivot is greater than the current element, increment the pivot index variable and then swap the current element with the element at the pivot index
 -   Swap the starting element (the pivot) with the pivot index
 -   Return the pivot index
+
+Quicksort _Pseudocode_
+
+-   Call the pivot helper on the array
+-   When the helper returns to you the updated pivot index, recursively call the pivot helper on the subarray to the left of that index, and the subarray to the right of that index
+-   The base case occurs when you consider a subarray with less than 2 elements
