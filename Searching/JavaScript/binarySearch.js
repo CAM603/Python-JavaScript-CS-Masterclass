@@ -17,3 +17,23 @@ function binarySearch(arr, val) {
 }
 
 binarySearch([1, 2, 3, 4, 5, 6, 7], 6);
+
+function binarySearchRecursive(arr, target, start, end) {
+    // Base case
+    if (start > end) {
+        return -1;
+    }
+
+    let mid = Math.floor((start + end) / 2);
+
+    if (arr[mid] === target) {
+        return mid;
+    }
+    if (arr[mid] > target) {
+        return binarySearchRecursive(arr, target, start, mid - 1);
+    } else {
+        return binarySearchRecursive(arr, target, mid + 1, end);
+    }
+}
+
+binarySearchRecursive([1, 2, 3, 4, 5, 6, 7], 6, 0, 8);

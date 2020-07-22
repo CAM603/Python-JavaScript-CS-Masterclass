@@ -137,26 +137,31 @@ def product_of_array(arr):
 
 def product_of_array_pure(arr):
 
-    if len(arr) == 0:
-        return 1
+    if len(arr) == 1:
+        return arr[0]
 
     return arr[0] * product_of_array_pure(arr[1:])
 
 
-print(product_of_array([1, 2, 3]))
-print(product_of_array_pure([1, 2, 3]))
+# print(product_of_array([1, 2, 3]))
+# print(product_of_array_pure([1, 2, 3]))
 
 """
 Write a function called recursive_range which accepts a number and adds up all the numbers from 0 to the number passed into the function
 
 recursiveRange(6) -> 21
+6 + 5 + 4 + 3 + 2 + 1 = 21
 recursiveRange(10) -> 55
 """
 # Code here
 
 
 def recursive_range(num):
-    pass
+    # base case
+    if num == 1:
+        return 1
+
+    return num + recursive_range(num - 1)
 
 
 """
