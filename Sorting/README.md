@@ -57,6 +57,32 @@ _Pseudocode_
 
 _Big O_: O(n^2)
 
+## Merge Sort
+
+A combination of two things - merging and sorting! Exploits the fact that arrays of 0 or 1 elements are always sorted. Works by decomposing an array into smaller arrays of 0 or 1 elements, then building up a newly sorted array.
+
+### Merging Arrays
+
+-   In order to implement merge sort, it's useful to first implement a function responsible for merging two sorted arrays.
+-   Given two sorted arrays, this helper function should create a new array which is also sorted, and consists of all of the elements in the two input arrays.
+-   This function should run in O(n + m) time and space complexity and should not modify the parameters passed in.
+
+_Pseudocode_
+
+-   Create an empty array, take a look at the smallest values in each input array
+-   While there are still values we haven't looked at:
+    -   If the value in the first array is smaller than the value the second array, push the value in the first array into our results and move onto the next value in the first array.
+    -   If the value in the first array is larger than the value in the second array, push the value in the second array into our results and move onto the next value in the second array
+    -   Once we exhaust one array, push all remaining values from the other array into our results
+
+### Sorting the Arrays
+
+_Pseudocode_
+
+-   Break up the array into halves until you have arrays that are empty or have one element
+-   Once you have smaller sorted arrays, merge those arrays with the other sorted arrays until you are back at the full length of the array
+-   Once the array has been merged back together, return the merged (and sorted) array
+
 ## Quick Sort
 
 Like merge sort, exploits the fact that arrays of 0 or 1 elements are always sorted. Works by selecting one element called the 'pivot' and finding the index where the pivot should end up in the sorted array. Once the pivot is positioned appropriately, quick sort can be applied on either side of the pivot.
@@ -91,3 +117,10 @@ Quicksort _Pseudocode_
 -   Call the pivot helper on the array
 -   When the helper returns to you the updated pivot index, recursively call the pivot helper on the subarray to the left of that index, and the subarray to the right of that index
 -   The base case occurs when you consider a subarray with less than 2 elements
+
+_Big O_:
+
+Time (best): O(n log n)
+Time (average): O(n log n)
+Time (worst): O(n^2) when given sorted data
+Space: O(log n)
