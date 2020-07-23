@@ -108,6 +108,7 @@ function flattenPure2(arr) {
 flattenPure([1, 2, 3, [4, 5]]);
 
 // Write a function called capitalizeFirst. Given an array of strings, capitalize the first letter of each string in the array
+// capitalizeFirst(["car", "taco", "banana"]) // ["Car", "Taco", "Banana"]
 
 function capitalizeFirst(arr) {
     let solution = [];
@@ -126,6 +127,7 @@ function capitalizeFirst(arr) {
 capitalizeFirst(["car", "taco", "banana"]);
 
 // Write a recursive function called capitalizedWords. Given an array of words, return a new array containing each word capitalized
+// capitalizedWords(["i", "am", "learning", "recursion"]) // ["I", "AM", "LEARNING", "RECURSION"]
 
 function capitalizedWords(arr) {
     let solution = [];
