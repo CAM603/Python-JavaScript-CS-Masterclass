@@ -42,3 +42,15 @@ function stringSearch(str1, str2) {
 }
 
 stringSearch("lorie loled", "lol");
+
+function stringSearchRecursive(str1, str2) {
+    if (str1.length < str2.length) return 0;
+
+    if (str1.slice(0, str2.length) === str2) {
+        return 1 + stringSearchRecursive(str1.slice(str2.length), str2);
+    } else {
+        return stringSearchRecursive(str1.slice(1), str2);
+    }
+}
+
+stringSearchRecursive("lorie loled", "lol");

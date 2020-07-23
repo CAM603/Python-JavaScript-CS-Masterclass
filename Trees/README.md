@@ -113,7 +113,9 @@ Iterative Steps
 
 ### Depth First Search
 
-Pre Order (starts from the root) Recursive Steps
+#### Pre Order Recursive Steps
+
+Visit the root, traverse the left subtree, and then traverse the right subtree.
 
 -   Create a variable to store the values of nodes visited
 -   Store the root of the BST in a variable called current
@@ -123,3 +125,47 @@ Pre Order (starts from the root) Recursive Steps
     -   If the node has a right property, call the helper function with the right property on the node
 -   Invoke the helper function with the current variable
 -   Return the array of visited values
+
+#### Post Order Recursive Steps
+
+Traverse the left subtree, traverse the right subtree, and then visit the root.
+
+-   Create a variable to store the values of nodes visited
+-   Store the root of the BST in a variable called current
+-   Write a helper function which accepts a node
+    -   If the node has a left property, call the helper function with the left property on the node
+    -   If the node has a right property, call the helper function with the right property on the node
+    -   Push the value of the node to the variable that stores the visited values
+-   Invoke the helper function with the current variable
+-   Return the array of visited values
+
+#### In Order Recursive Steps
+
+Traverse the left subtree, visit the root, and then visit the right subtree.
+
+-   Create a variable to store the values of nodes visited
+-   Store the root of the BST in a variable called current
+-   Write a helper function which accepts a node
+    -   If the node has a left property, call the helper function with the left property on the node
+    -   Push the value of the node to the variable that stores the visited values
+    -   If the node has a right property, call the helper function with the right property on the node
+-   Invoke the helper function with the current variable
+-   Return the array of visited values
+
+## Use Cases
+
+DFS
+
+-   When the tree is wide, less nodes will be stored when compared to a BFS
+
+BFS
+
+-   When there are less nodes to keep track of
+
+DFS In Order
+
+-   Gets all nodes in the tree in their underlying order
+
+DFS Pre Order
+
+-   Can be used to export a tree structure so tha it can be easily reconstructed
