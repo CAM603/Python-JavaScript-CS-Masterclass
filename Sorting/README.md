@@ -68,6 +68,8 @@ _Pseudocode_
 -   Continue to the next element and if it is in the incorrect order, iterate through the sorted portion (the left side) to place the element in the correct place
 -   Repeat until the array is sorted
 
+_Big O_: O(n^2)
+
 ## Merge Sort
 
 A combination of two things - merging and sorting! Exploits the fact that arrays of 0 or 1 elements are always sorted. Works by decomposing an array into smaller arrays of 0 or 1 elements, then building up a newly sorted array.
