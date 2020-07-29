@@ -143,9 +143,6 @@ def product_of_array_pure(arr):
     return arr[0] * product_of_array_pure(arr[1:])
 
 
-# print(product_of_array([1, 2, 3]))
-# print(product_of_array_pure([1, 2, 3]))
-
 """
 Write a function called recursive_range which accepts a number and adds up all the numbers from 0 to the number passed into the function
 
@@ -176,4 +173,20 @@ fib(35) -> 9227465
 
 
 def fib(num):
-    pass
+    if num <= 2:
+        return 1
+
+    return fib(num - 1) + fib(num - 2)
+
+
+def fib_cache(num, cache={}):
+
+    if num <= 2:
+        return 1
+
+    elif num in cache:
+        return cache[num]
+
+    cache[num] = fib_cache(num - 1) + fib_cache(num - 2)
+
+    return cache[num]
