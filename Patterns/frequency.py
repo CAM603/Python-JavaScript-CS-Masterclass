@@ -105,9 +105,9 @@ def sameFrequency(n1, n2):
     return True
 
 
-print(sameFrequency(123, 456))
-print(sameFrequency(123, 321))
-print(sameFrequency(123, 32))
+print(sameFrequency(123, 456))  # False
+print(sameFrequency(123, 321))  # True
+print(sameFrequency(123, 32))  # False
 
 # CHALLENGE: areThereDuplicates
 """
