@@ -1,13 +1,30 @@
-# Python-JavaScript-Masterclass
+# Python | JavaScript - Computer Science Masterclass
 
-## Data Structures
+A collection of computer science related topics including data structures, algorithms, problem solving and Big O notation...currently in Python and JavaScript.
 
-Collections of values, the relationships among them, and the functions or operations that can be applied to the data
+## Motivation
 
-## Classes
+I created this as a place for myself and others to reference computer science concepts. It also serves as a playground for practicing new languages. There's no better way to practice a language than by implementing data structures, algorithms and solving common code challenges!
 
--   Classes are blueprints that when created make objects known as instances
--   Classes are created with the new keyword
--   The constructor function is a special function that gets run when the class is instantiated
--   Instance methods can be added to classes similar to methods in objects
--   Class methods can be added using the static keyword
+## Current Languages
+
+- JavaScript
+- Python
+
+## Features
+
+- Problem Solving
+- Big O
+- Singly Linked Lists
+- Doubly Linked Lists
+- Stacks
+- Queues
+- Hash Tables
+- Trees
+- Graphs
+- Dynamic Programming
+- Patterns
+- Recursion
+- Searching
+- Sorting
+- Challenges
